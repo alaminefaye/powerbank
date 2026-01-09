@@ -1,0 +1,76 @@
+═══════════════════════════════════════════════════════════════
+  INFORMATIONS TECHNIQUES POUR CONFIGURATION DES APPAREILS
+═══════════════════════════════════════════════════════════════
+
+URL DE BASE DE L'API
+─────────────────────
+https://VOTRE-DOMAINE.com/api
+
+(Remplacez VOTRE-DOMAINE.com par votre domaine réel)
+
+
+ENDPOINTS PRINCIPAUX
+────────────────────
+
+1. AUTHENTIFICATION DES APPAREILS
+   POST /api/rentbox/client/connect
+   
+   Paramètres requis:
+   - uuid (IMEI de l'appareil)
+   - deviceId (par défaut: 0)
+   - sign (signature MD5)
+   
+   Body: hardware=VERSION&software=VERSION
+   
+   Retourne: Credentials MQTT (host, port, username, password)
+
+
+2. UPLOAD DE STATUT
+   POST /api/rentbox/device/upload
+   
+   Body JSON:
+   {
+     "uuid": "IMEI",
+     "data": "{\"total_slots\": 12, \"slots\": [...]}"
+   }
+
+
+3. RETOUR DE POWERBANK
+   POST /api/rentbox/device/return
+   
+   Body JSON:
+   {
+     "uuid": "IMEI",
+     "slot": 1,
+     "sn": "SN_POWERBANK"
+   }
+
+
+CALCUL DE LA SIGNATURE
+──────────────────────
+sign = MD5("deviceId={deviceId}|simMobile={simMobile}|simUUID={simUUID}|uuid={uuid}")
+
+Exemple:
+deviceId=0, simMobile=, simUUID=89860427092281034392, uuid=860602069165357
+→ sign = MD5("deviceId=0|simMobile=|simUUID=89860427092281034392|uuid=860602069165357")
+
+
+COMMUNICATION MQTT
+──────────────────
+Topics à écouter (Subscribe):
+- powerbank/{clientId}/check
+- powerbank/{clientId}/popup
+- powerbank/{clientId}/popup_sn
+
+Topics pour publier (Publish):
+- powerbank/{clientId}/response
+- powerbank/{clientId}/upload_all
+- powerbank/{clientId}/heartbeat
+
+
+DOCUMENTATION COMPLÈTE
+──────────────────────
+Voir le fichier: DOCUMENTATION_ENTREPRISE.md
+
+═══════════════════════════════════════════════════════════════
+

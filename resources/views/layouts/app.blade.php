@@ -94,6 +94,14 @@
                         </a>
                     </li>
                     
+                    <!-- PowerBank Devices -->
+                    <li class="menu-item {{ request()->routeIs('powerbank.*') ? 'active' : '' }}">
+                        <a href="{{ route('powerbank.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-devices"></i>
+                            <div data-i18n="Devices">PowerBank Devices</div>
+                        </a>
+                    </li>
+                    
                     @yield('menu-items')
                 </ul>
             </aside>

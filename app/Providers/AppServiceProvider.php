@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Device;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Route model binding for PowerBank devices
+        Route::bind('device', function ($value) {
+            return Device::findOrFail($value);
+        });
     }
 }
