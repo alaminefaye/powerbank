@@ -8,10 +8,8 @@
 
 ### URL de Base de l'API
 ```
-https://votre-domaine.com/api
+https://powerbank.universaltechnologiesafrica.com/api
 ```
-
-**Remplacez `votre-domaine.com` par votre domaine réel**
 
 ---
 
@@ -21,7 +19,7 @@ https://votre-domaine.com/api
 
 **Endpoint:** `POST /api/rentbox/client/connect`
 
-**URL Complète:** `https://votre-domaine.com/api/rentbox/client/connect`
+**URL Complète:** `https://powerbank.universaltechnologiesafrica.com/api/rentbox/client/connect`
 
 #### Paramètres de Requête (Query Parameters)
 
@@ -64,7 +62,7 @@ sign = "ff46bf468563a48b068d198158a21835"
 #### Exemple de Requête cURL
 
 ```bash
-curl -X POST "https://votre-domaine.com/api/rentbox/client/connect?uuid=860602069165357&deviceId=0&simUUID=89860427092281034392&simMobile=&sign=ff46bf468563a48b068d198158a21835" \
+curl -X POST "https://powerbank.universaltechnologiesafrica.com/api/rentbox/client/connect?uuid=860602069165357&deviceId=0&simUUID=89860427092281034392&simMobile=&sign=ff46bf468563a48b068d198158a21835" \
   -H "Content-Type: text/plain" \
   -d "hardware=V6086&software=20240904-RBMG-3.0.0.0"
 ```
@@ -107,7 +105,7 @@ curl -X POST "https://votre-domaine.com/api/rentbox/client/connect?uuid=86060206
 
 **Endpoint:** `POST /api/rentbox/device/upload`
 
-**URL Complète:** `https://votre-domaine.com/api/rentbox/device/upload`
+**URL Complète:** `https://powerbank.universaltechnologiesafrica.com/api/rentbox/device/upload`
 
 #### Body de la Requête (JSON)
 
@@ -151,7 +149,7 @@ curl -X POST "https://votre-domaine.com/api/rentbox/client/connect?uuid=86060206
 #### Exemple de Requête cURL
 
 ```bash
-curl -X POST "https://votre-domaine.com/api/rentbox/device/upload" \
+curl -X POST "https://powerbank.universaltechnologiesafrica.com/api/rentbox/device/upload" \
   -H "Content-Type: application/json" \
   -d '{
     "uuid": "860602069165357",
@@ -176,7 +174,7 @@ curl -X POST "https://votre-domaine.com/api/rentbox/device/upload" \
 
 **Endpoint:** `POST /api/rentbox/device/return`
 
-**URL Complète:** `https://votre-domaine.com/api/rentbox/device/return`
+**URL Complète:** `https://powerbank.universaltechnologiesafrica.com/api/rentbox/device/return`
 
 #### Body de la Requête (JSON)
 
@@ -199,7 +197,7 @@ curl -X POST "https://votre-domaine.com/api/rentbox/device/upload" \
 #### Exemple de Requête cURL
 
 ```bash
-curl -X POST "https://votre-domaine.com/api/rentbox/device/return" \
+curl -X POST "https://powerbank.universaltechnologiesafrica.com/api/rentbox/device/return" \
   -H "Content-Type: application/json" \
   -d '{
     "uuid": "860602069165357",
