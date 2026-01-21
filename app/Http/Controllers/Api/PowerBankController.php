@@ -70,7 +70,7 @@ class PowerBankController extends Controller
         // Generate MQTT connection parameters
         $clientId = $uuid;
         $productKey = 'powerbank';
-        $host = config('powerbank.mqtt_host', 'localhost');
+        $host = config('powerbank.mqtt_host', 'powerbank.universaltechnologiesafrica.com');
         $port = config('powerbank.mqtt_port', 1883);
         $username = $uuid;
         $password = md5($uuid . config('app.key') . now()->timestamp);
