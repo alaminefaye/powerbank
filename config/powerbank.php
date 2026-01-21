@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'mqtt_host' => env('POWERBANK_MQTT_HOST', 'localhost'),
+    'mqtt_host' => env('POWERBANK_MQTT_HOST', 'powerbank.universaltechnologiesafrica.com'),
     'mqtt_port' => env('POWERBANK_MQTT_PORT', 1883),
     'mqtt_username' => env('POWERBANK_MQTT_USERNAME', ''),
     'mqtt_password' => env('POWERBANK_MQTT_PASSWORD', ''),
