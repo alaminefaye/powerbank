@@ -101,6 +101,14 @@
                             <div data-i18n="Devices">PowerBank Devices</div>
                         </a>
                     </li>
+
+                    <!-- Rentals & Payments -->
+                    <li class="menu-item {{ request()->routeIs('rentals.*') ? 'active' : '' }}">
+                        <a href="{{ route('rentals.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-credit-card"></i>
+                            <div data-i18n="Rentals">Locations & Paiements</div>
+                        </a>
+                    </li>
                     
                     @yield('menu-items')
                 </ul>

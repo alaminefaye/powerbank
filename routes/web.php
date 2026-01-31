@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PowerBankController;
+use App\Http\Controllers\RentalController;
 
 // Authentication Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -21,4 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('powerbank/{device}/popup', [PowerBankController::class, 'popup'])->name('powerbank.popup');
     Route::post('powerbank/{device}/popup-sn', [PowerBankController::class, 'popupSn'])->name('powerbank.popup-sn');
     Route::post('powerbank/{device}/refresh', [PowerBankController::class, 'refresh'])->name('powerbank.refresh');
+
+    // Rental & Transaction History
+    Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
 });
