@@ -6,8 +6,11 @@
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Gestion /</span> Locations & Paiements</h4>
 
 <div class="card mb-4">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="mb-0">Filtres de recherche</h5>
+        <a href="{{ route('rentals.test') }}" class="btn btn-warning btn-sm">
+            <i class='bx bx-test-tube'></i> Nouveau Test
+        </a>
     </div>
     <div class="card-body">
         <form method="GET" action="{{ route('rentals.index') }}" class="row g-3">

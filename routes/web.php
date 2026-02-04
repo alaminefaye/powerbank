@@ -24,5 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('powerbank/{device}/refresh', [PowerBankController::class, 'refresh'])->name('powerbank.refresh');
 
     // Rental & Transaction History
+    Route::get('/rentals/test', [RentalController::class, 'createTest'])->name('rentals.test');
+    Route::post('/rentals/test', [RentalController::class, 'storeTest'])->name('rentals.test.store');
     Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
 });
